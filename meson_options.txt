@@ -1,0 +1,7 @@
+option('embedded', type : 'boolean', value : false,
+       description : 'Set to reduce computational costs at expense of speech quality')
+option('festival', type : 'boolean', value : false,
+       description : 'Set to compile with festival memory allocation')
+option('hts_audio', type : 'combo',
+       choices : ['auto', 'win32', 'portaudio', 'none'], value : 'auto')
+
