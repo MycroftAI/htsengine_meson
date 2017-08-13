@@ -607,9 +607,9 @@ void HTS_Engine_save_information(HTS_Engine * engine, FILE * fp)
    /* generated sequence */
    fprintf(fp, "[Generated sequence]\n");
    fprintf(fp, "Number of HMMs                         -> %8lu\n", (unsigned long) HTS_Label_get_size(label));
-   fprintf(fp, "Number of stats                        -> %8lu\n", (unsigned long) HTS_Label_get_size(label) * HTS_ModelSet_get_nstate(ms));
+   fprintf(fp, "Number of stats                        -> %8lu\n", (unsigned long) (HTS_Label_get_size(label) * HTS_ModelSet_get_nstate(ms)));
    fprintf(fp, "Length of this speech                  -> %8.3f(sec)\n", (float) ((double) HTS_PStreamSet_get_total_frame(pss) * condition->fperiod / condition->sampling_frequency));
-   fprintf(fp, "                                       -> %8lu(frames)\n", (unsigned long) HTS_PStreamSet_get_total_frame(pss) * condition->fperiod);
+   fprintf(fp, "                                       -> %8lu(frames)\n", (unsigned long) (HTS_PStreamSet_get_total_frame(pss) * condition->fperiod));
 
    for (i = 0; i < HTS_Label_get_size(label); i++) {
       fprintf(fp, "HMM[%2lu]\n", (unsigned long) i);
