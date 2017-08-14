@@ -1162,20 +1162,18 @@ HTS_Boolean HTS_ModelSet_load(HTS_ModelSet * ms, char **voices, size_t num_voice
          ms->option = temp_option;
       } else {
          for (j = 0; j < ms->num_streams; j++)
+         {
             if (vector_length[j] != temp_vector_length[j])
                error = TRUE;
-         for (j = 0; j < ms->num_streams; j++)
             if (is_msd[j] != temp_is_msd[j])
                error = TRUE;
-         for (j = 0; j < ms->num_streams; j++)
             if (num_windows[j] != temp_num_windows[j])
                error = TRUE;
-         for (j = 0; j < ms->num_streams; j++)
             if (use_gv[j] != temp_use_gv[j])
                error = TRUE;
-         for (j = 0; j < ms->num_streams; j++)
             if (HTS_strequal(ms->option[j], temp_option[j]) != TRUE)
                error = TRUE;
+         }
          free(temp_vector_length);
          free(temp_is_msd);
          free(temp_num_windows);
